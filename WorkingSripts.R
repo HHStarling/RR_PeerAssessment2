@@ -23,3 +23,18 @@ allData <- readRDS(file="allData.Rds")
 ## create smaller subset of data to work with
 allData <- allData[1:100000,]
 saveRDS(allData, file="allData.Rds")
+
+## economic impacts of weather
+## http://journals.ametsoc.org/doi/pdf/10.1175/2011BAMS2928.1
+
+## effect of inflation on numbers - need to update earlier values to 2011? values
+
+## Update date field data types
+allData$END_DATE <- as.Date(allData$END_DATE, format="%m/%d/%Y %H:%M:%S")
+allData$BGN_DATE <- as.Date(allData$BGN_DATE, format="%m/%d/%Y %H:%M:%S")
+
+## Add year column to use for inflation calcs
+allData <- mutate(allData, Year = as.numeric(format(allData$BGN_DATE, "%Y")))
+
+## consumer price index values
+## http://www.bls.gov/data/
