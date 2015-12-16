@@ -1,0 +1,18 @@
+---
+title: 'Analysis: Impacts of Weather Events on Economy and Health'
+author: "H Starling"
+date: "December 16, 2015"
+output: html_document
+---
+
+# Synopsis
+
+
+# Data Processing
+
+
+# Results
+
+
+
+
